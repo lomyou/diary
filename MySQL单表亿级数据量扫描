@@ -17,3 +17,4 @@ select * from t where bill_time>= #{startTime} and bill_time<=#{endTime}
 
 解决：
 ① 对查询sql进行逻辑拆分，按照bill_time的时间区间切分查询任务
+② 需改分页语句：select * from t where bill_time>= #{startTime} and bill_time<=#{endTime} and id > #{maxId}
